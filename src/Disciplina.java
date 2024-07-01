@@ -41,6 +41,10 @@ public class Disciplina {
     }
 
     public boolean insereEstudante(Estudante novo) {
+        if (getEstudante(novo.getMatricula()) != null) {
+            System.out.println("Erro: Matrícula já cadastrada.");
+            return false;
+        }
         return turma.add(novo);
     }
 
